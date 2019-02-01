@@ -5,7 +5,7 @@
 
 ## Prefix key
 
-The default prefix is C-b. If you (or your muscle memory) prefer C-a, you need to add this to `~/.tmux.conf`:
+The default prefix is C-b. If you prefer C-a, you need to add this to `~/.tmux.conf`:
 
     # remap prefix to Control + a
     set -g prefix C-a
@@ -13,8 +13,7 @@ The default prefix is C-b. If you (or your muscle memory) prefer C-a, you need t
     bind C-a send-prefix
     unbind C-b
 
-I'm going to assume that C-a is your prefix.
-
+I'm going to assume that C-b is your prefix.
 
 ## Sessions, windows, panes
 
@@ -29,13 +28,13 @@ Pane is a rectangular part of a window that runs a specific command, e.g. a shel
 
 Display a list of keyboard shortcuts:
 
-    C-a ?
+    C-b ?
 
 Navigate using Vim or Emacs shortcuts, depending on the value of `mode-keys`. Emacs is the default, and if you want Vim shortcuts for help and copy modes (e.g. j, k, C-u, C-d), add the following line to `~/.tmux.conf`:
 
     setw -g mode-keys vi
 
-Any command mentioned in this list can be executed as `tmux something` or `C-a :something` (or added to `~/.tmux.conf`).
+Any command mentioned in this list can be executed as `tmux something` or `C-b :something` (or added to `~/.tmux.conf`).
 
 
 ## Managing sessions
@@ -52,103 +51,103 @@ Attach to a session:
 
     tmux attach -t work
 
-Detach from a session: `C-a d`.
+Detach from a session: `C-b d`.
 
 Switch between sessions:
 
-    C-a (          previous session
-    C-a )          next session
-    C-a L          ‘last’ (previously used) session
-    C-a s          choose a session from a list
+    C-b (          previous session
+    C-b )          next session
+    C-b L          ‘last’ (previously used) session
+    C-b s          choose a session from a list
 
 Other:
 
-    C-a $          rename the current session
-    C-a
+    C-b $          rename the current session
+    C-b
 
 
 ## Managing windows
 
 Create a window:
 
-    C-a c          create a new window
+    C-b c          create a new window
 
 Switch between windows:
 
-    C-a 1 ...      switch to window 1, ..., 9, 0
-    C-a 9
-    C-a 0
-    C-a p          previous window
-    C-a n          next window
-    C-a l          ‘last’ (previously used) window
-    C-a w          choose window from a list
+    C-b 1 ...      switch to window 1, ..., 9, 0
+    C-b 9
+    C-b 0
+    C-b p          previous window
+    C-b n          next window
+    C-b l          ‘last’ (previously used) window
+    C-b w          choose window from a list
 
 Switch between windows with a twist:
 
-    C-a M-n        next window with a bell, activity or
+    C-b M-n        next window with a bell, activity or
                    content alert
-    C-a M-p        previous such window
+    C-b M-p        previous such window
 
 
 Other:
 
-    C-a ,          rename the current window
-    C-a &          kill the current window
+    C-b ,          rename the current window
+    C-b &          kill the current window
 
 
 ## Managing split panes
 
 Creating a new pane by splitting an existing one:
 
-    C-a "          split vertically (top/bottom)
-    C-a %          split horizontally (left/right)
+    C-b "          split vertically (top/bottom)
+    C-b %          split horizontally (left/right)
 
 Switching between panes:
 
-    C-a left       go to the next pane on the left
-    C-a right      (or one of these other directions)
-    C-a up
-    C-a down
-    C-a o          go to the next pane (cycle through all of them)
-    C-a ;          go to the ‘last’ (previously used) pane
+    C-b left       go to the next pane on the left
+    C-b right      (or one of these other directions)
+    C-b up
+    C-b down
+    C-b o          go to the next pane (cycle through all of them)
+    C-b ;          go to the ‘last’ (previously used) pane
 
 Moving panes around:
 
-    C-a {          move the current pane to the previous position
-    C-a }          move the current pane to the next position
-    C-a C-o        rotate window ‘up’ (i.e. move all panes)
-    C-a M-o        rotate window ‘down’
-    C-a !          move the current pane into a new separate
+    C-b {          move the current pane to the previous position
+    C-b }          move the current pane to the next position
+    C-b C-o        rotate window ‘up’ (i.e. move all panes)
+    C-b M-o        rotate window ‘down’
+    C-b !          move the current pane into a new separate
                    window (‘break pane’)
-    C-a :move-pane -t :3.2
+    C-b :move-pane -t :3.2
                    split window 3's pane 2 and move the current pane there
 
 Resizing panes:
 
-    C-a M-up, C-a M-down, C-a M-left, C-a M-right
+    C-b M-up, C-b M-down, C-b M-left, C-b M-right
                    resize by 5 rows/columns
-    C-a C-up, C-a C-down, C-a C-left, C-a C-right
+    C-b C-up, C-b C-down, C-b C-left, C-b C-right
                    resize by 1 row/column
 
 Applying predefined layouts:
 
-    C-a M-1        switch to even-horizontal layout
-    C-a M-2        switch to even-vertical layout
-    C-a M-3        switch to main-horizontal layout
-    C-a M-4        switch to main-vertical layout
-    C-a M-5        switch to tiled layout
-    C-a space      switch to the next layout
+    C-b M-1        switch to even-horizontal layout
+    C-b M-2        switch to even-vertical layout
+    C-b M-3        switch to main-horizontal layout
+    C-b M-4        switch to main-vertical layout
+    C-b M-5        switch to tiled layout
+    C-b space      switch to the next layout
 
 
 Other:
 
-    C-a x          kill the current pane
-    C-a q          display pane numbers for a short while
+    C-b x          kill the current pane
+    C-b q          display pane numbers for a short while
 
 
 ## Other config file settings
 
-Force a reload of the config file on C-a r:
+Force a reload of the config file on C-b r:
 
     unbind r
     bind r source-file ~/.tmux.conf
